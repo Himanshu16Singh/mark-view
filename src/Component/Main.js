@@ -1,7 +1,17 @@
 import React, { useState } from "react";
-import '../Style/main.css'
+import '../Style/main.css';
 
 let marked = require("marked");
+
+var renderer = new marked.Renderer();
+renderer.link = function(href, title, text) {
+    var link = marked.Renderer.prototype.link.apply(this, arguments);
+    return link.replace("<a","<a target='_blank'");
+};
+
+marked.setOptions({
+    renderer: renderer
+});
 
 const ToolBar = (props) => {
 
@@ -51,16 +61,63 @@ const Editor = (props) => {
     );
 }
 
+const placeholder = `# Welcome to markView : Interactive Markdown Previewer!
+
+<div align="center">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaCQ-J5LrkIXvMsa-G4VwTrWXeYeq2kxpZvw&usqp=CAU" 
+    alt="Bean: funny face"/>
+</div>
+
+## This is a sub-heading...
+### And here's some other cool stuff:
+
+Heres some code, \`<div></div>\`, between 2 backticks.
+
+\`\`\`
+// this is multi-line code:
+
+function anotherExample(firstLine, lastLine) {
+  if (firstLine == '\`\`\`' && lastLine == '\`\`\`') {
+    return multiLineCode;
+  }
+}
+\`\`\`
+
+You can also make text **bold**... whoa!
+Or _italic_.
+Or... wait for it... **_both!_**
+And feel free to go crazy ~~crossing stuff out~~.
+
+There's also [links](https://github.com/Himanshu16Singh/mark-view), and
+> Block Quotes!
+
+And if you want to get really crazy, even tables:
+
+Wild Header | Crazy Header | Another Header?
+------------ | ------------- | -------------
+Your content can | be here, and it | can be here....
+And here. | Okay. | I think we get it.
+
+- And of course there are lists.
+  - Some are bulleted.
+     - With different indentation levels.
+        - That look like this.
+
+
+1. And there are numbererd lists too.
+1. Use just 1s if you want!
+`;
+
 const Main = () => {
 
-    const [text,updateText] = useState("");
+    const [text,updateText] = useState(placeholder);
     const [editorExpand,handleEditorExpand] = useState(false);
     const [previewExpand,handlePreviewExpand] = useState(false);
 
     const styleClass = editorExpand ? ["editor maximized mt-3", "hide", "fas fa-compress-alt cx"] : 
                         previewExpand ? 
                         ["hide", "editor maximized mt-3", "fas fa-compress-alt cx"] : 
-                        ["editor mt-4", "preview mt-4", "fas fa-expand-alt cx"];
+                        ["editor mt-4", "preview mt-4 ", "fas fa-expand-alt cx"];
 
     return (
         <div>
