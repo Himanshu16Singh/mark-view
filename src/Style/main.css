@@ -1,0 +1,67 @@
+
+.shadow-color {
+    box-shadow: 3px 3px 10px orange;
+}
+
+.preview{
+    width: 65%;
+    margin: auto;
+    margin-bottom: -14px;
+}
+
+#prev-div-2{
+    max-width: 100%;
+    min-height: 200px;
+    word-wrap: break-word;
+}
+
+.bg-color {
+    background-color: #e6e6e6;
+    color:black;
+}
+
+#editor:hover, #preview:hover {
+    transform: scale(1.01);
+}
+
+.editor {
+    width: 55%;
+    margin: auto;
+}
+
+#edit-div-2 > textarea{
+    width: 100%;
+    min-height: 200px;
+}
+
+.hide {
+    display: none;
+}
+
+.cx {
+    cursor: pointer;
+    float: right;
+    margin-top: .25em;
+    margin-right: .50em;
+}
+
+.fas:hover {
+    color: aqua;
+    transform: scale(1.2);
+}
+
+.maximized {
+    width: 95%;
+}
+
+.maximized #edit-div-2 textarea{
+    width: 100%;
+    min-height: 450px;
+    margin-bottom: 40px;
+}
+
+.maximized #prev-div-2 {
+    max-width: 100%;
+    min-height: 450px;
+    word-wrap: break-word;
+}
