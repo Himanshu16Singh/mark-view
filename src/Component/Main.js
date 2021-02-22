@@ -3,16 +3,6 @@ import '../Style/main.css';
 
 let marked = require("marked");
 
-var renderer = new marked.Renderer();
-renderer.link = function(href, title, text) {
-    var link = marked.Renderer.prototype.link.apply(this, arguments);
-    return link.replace("<a","<a target='_blank'");
-};
-
-marked.setOptions({
-    renderer: renderer
-});
-
 const ToolBar = (props) => {
 
     return (
@@ -25,6 +15,14 @@ const ToolBar = (props) => {
 }
 
 const Previewer = (props) => {
+
+    function handleClick(e){
+        if (e.target.tagName === "A")
+        {
+            e.target.setAttribute("target", "_blank");
+        }
+    }
+
     return (
         <div id="preview" className={props.class2}>
             <ToolBar
@@ -35,6 +33,7 @@ const Previewer = (props) => {
 
             <div id="prev-div-2" className="bg-color p-3 mb-5 shadow-color" 
                 dangerouslySetInnerHTML={{__html: marked(props.markdown)}}
+                onClick={handleClick}
             >
             </div>
         </div>
@@ -42,6 +41,23 @@ const Previewer = (props) => {
 }
 
 const Editor = (props) => {
+
+    function handleKeyDown(e) {
+        if (e.key === 'Tab') {
+            e.preventDefault();
+            var start = e.target.selectionStart;
+            var end = e.target.selectionEnd;
+
+            // set textarea value to: text before caret + tab + text after caret
+            e.target.value = e.target.value.substring(0, start) +
+            "\t" + e.target.value.substring(end);
+
+            // put caret at right position again
+            e.target.selectionStart =
+            e.target.selectionEnd = start + 1;
+        }
+    }
+
     return (
         <div id="editor" className={props.class1}>
             <ToolBar 
@@ -53,6 +69,7 @@ const Editor = (props) => {
             <div id="edit-div-2">
                 <textarea className="bg-color shadow-color"
                     value={props.markdown} onChange={(e) => props.updateMark(e.target.value)}
+                    onKeyDown={handleKeyDown}
                 >
                     {console.log(props.markdown)}
                 </textarea>
