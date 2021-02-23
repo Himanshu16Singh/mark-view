@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/mark-view/static/css/main.e8c54f9a.chunk.css",
+    "main.js": "/mark-view/static/js/main.cc44d2d9.chunk.js",
+    "main.js.map": "/mark-view/static/js/main.cc44d2d9.chunk.js.map",
+    "runtime-main.js": "/mark-view/static/js/runtime-main.bd01a074.js",
+    "runtime-main.js.map": "/mark-view/static/js/runtime-main.bd01a074.js.map",
+    "static/css/2.150d169a.chunk.css": "/mark-view/static/css/2.150d169a.chunk.css",
+    "static/js/2.c440b70e.chunk.js": "/mark-view/static/js/2.c440b70e.chunk.js",
+    "static/js/2.c440b70e.chunk.js.map": "/mark-view/static/js/2.c440b70e.chunk.js.map",
+    "index.html": "/mark-view/index.html",
+    "static/css/2.150d169a.chunk.css.map": "/mark-view/static/css/2.150d169a.chunk.css.map",
+    "static/css/main.e8c54f9a.chunk.css.map": "/mark-view/static/css/main.e8c54f9a.chunk.css.map",
+    "static/js/2.c440b70e.chunk.js.LICENSE.txt": "/mark-view/static/js/2.c440b70e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bd01a074.js",
+    "static/css/2.150d169a.chunk.css",
+    "static/js/2.c440b70e.chunk.js",
+    "static/css/main.e8c54f9a.chunk.css",
+    "static/js/main.cc44d2d9.chunk.js"
+  ]
+}
