@@ -1,7 +1,6 @@
 import React, { useState } from "react";
+import marked from 'marked';
 import '../Style/main.css';
-
-let marked = require("marked");
 
 const ToolBar = (props) => {
 
