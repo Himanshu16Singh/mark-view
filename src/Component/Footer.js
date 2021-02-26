@@ -14,6 +14,11 @@ const Content = (
                 >
                     <i className="text-white ml-3 fab fa-linkedin-in"></i>
                 </a>
+                <a href="https://twitter.com/himaNSHU_seeNGH" target="_blank"
+                    rel="noreferrer"
+                >
+                    <i className="text-white ml-3 fab fa-twitter"></i>
+                </a>
             </h2>
         </footer>
     );
