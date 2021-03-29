@@ -137,7 +137,7 @@ const Main = () => {
                         ["editor mt-4", "preview mt-4 ", "fas fa-expand-alt cx"];
 
     return (
-        <div>
+        <div className="main">
             <Editor markdown={text} updateMark={updateText}
                 class1={styleClass[0]}
                 icon={styleClass[2]}
